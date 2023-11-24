@@ -9,7 +9,7 @@ pipeline {
         SNAP_REPO = 'vprofile-snapshot'
         NEXUS_USER = 'admin'
         NEXUS_PASS = 'admin123'
-        RELEASE_REPO = 'vrpofile-release'
+        RELEASE_REPO = 'vprofile-release'
         CENTRAL_REPO = 'vpro-maven-central'
         NEXUSIP = '172.31.3.197'
         NEXUSPORT = '8081'
@@ -75,7 +75,7 @@ pipeline {
                   nexusVersion: 'nexus3',
                   protocol: 'http',
                   nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
-                  groupId: '',
+                  groupId: 'QA',
                   version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
                   repository: "${RELEASE_REPO}",
                   credentialsId: "${NEXUS_LOGIN}",
